@@ -4,6 +4,12 @@ import Testing
 @testable import OpenAI
 
 @Test
+func codableInputText() throws {
+	let input = Input("Test message")
+	try assertCodable(input, resource: "InputText")
+}
+
+@Test
 func codableInput() throws {
 	let items: [Input.ListItem] = [
 		.message(
